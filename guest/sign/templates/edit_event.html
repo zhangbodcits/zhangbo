@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑发布会</title>
+    <style>
+        .center {
+            margin-top: 8px
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <form method="post" action="/edit_event/" style="text-align: center;margin-top: 10%">
+            <input hidden value="{{ eid }}" name="event_id">
+            <div class="center">
+                {#                <span>id</span> :<input name="id" type="text" value="{{ event.id }}">#}
+                <div class="center">
+                    <span>name</span> :<input name="name" type="text" value="{{ event.name }}"><br>
+                </div>
+                <div class="center">
+                    <span>limit</span> :<input name="limit" type="text" value="{{ event.limit }}">
+                </div>
+                <div class="center">
+                    <span>status</span> :<input name="status" type="text" value="{{ event.status }}">
+                </div>
+                <div class="center">
+                    <span>address</span> :<input name="address" type="text" value="{{ event.address }}">
+                </div>
+                <div class="center">
+                    <span>start_time</span> :<input name="start_time" type="datetime" value="{{ event.start_time }}">
+                </div>
+            </div>
+
+            <span style="font-size: 12px;color: red;">{{ error }}</span><br>
+            <button id="btn" type="submit">提交</button>
+            {% csrf_token %}
+        </form>
+    </div>
+</div>
+</body>
+</html>

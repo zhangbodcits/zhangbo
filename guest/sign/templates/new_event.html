@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新建发布会</title>
+    <style>
+        .center{
+            margin-top: 8px
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <form method="post" action="/event_manage/" style="text-align: center;margin-top: 10%">
+            <div class="center">
+                <span>name</span> :<input name="name" type="text"><br>
+            </div>
+            <div class="center">
+                <span>limit</span> :<input name="limit" type="text">
+            </div>
+            <div class="center">
+                <span>status</span> :<input name="status" type="text">
+            </div>
+            <div class="center">
+                <span>address</span> :<input name="address" type="text">
+            </div>
+            <div class="center">
+                <span>start_time</span> :<input name="start_time" type="date">
+            </div>
+
+
+            <span style="font-size: 12px;color: red;">{{ error }}</span><br>
+            <button id="btn" type="submit">提交</button>
+            {% csrf_token %}
+        </form>
+    </div>
+</div>
+</body>
+</html>

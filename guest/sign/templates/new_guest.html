@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增嘉宾</title>
+    <style>
+        .center{
+            margin-top: 8px
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <form method="post" action="/guest_manage/" style="text-align: center;margin-top: 10%">
+            <div class="center">
+                <span>event</span> :<input name="eid" type="text">
+            <div class="center">
+                <span>realname</span> :<input name="realname" type="text"><br>
+            </div>
+            <div class="center">
+                <span>phone</span> :<input name="phone" type="text">
+            </div>
+            <div class="center">
+                <span>email</span> :<input name="email" type="text">
+            </div>
+            <div class="center">
+                <span>sign</span> :<input name="sign" type="text">
+            </div>
+            </div>
+
+            <span style="font-size: 12px;color: red;">{{ error }}</span><br>
+            <button id="btn" type="submit">提交</button>
+            {% csrf_token %}
+        </form>
+    </div>
+</div>
+</body>
+</html>

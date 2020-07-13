@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑嘉宾</title>
+    <style>
+        .center {
+            margin-top: 8px
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <form method="post" action="/edit_guest/" style="text-align: center;margin-top: 10%">
+            <input hidden value="{{ eid }}" name="eid">
+            <div class="center">
+                <span>event</span> :<input name="event" type="text" value="{{ guest.event_id }}">
+                <div class="center">
+                    <span>realname</span> :<input name="realname" type="text" value="{{ guest.realname }}"><br>
+                </div>
+                <div class="center">
+                    <span>phone</span> :<input name="phone" type="text" value="{{ guest.phone }}">
+                </div>
+                <div class="center">
+                    <span>email</span> :<input name="email" type="text" value="{{ guest.email }}">
+                </div>
+                <div class="center">
+                    <span>sign</span> :<input name="sign" type="text" value="{{ guest.sign }}">
+                </div>
+            </div>
+
+            <span style="font-size: 12px;color: red;">{{ error }}</span><br>
+            <button id="btn" type="submit">提交</button>
+            {% csrf_token %}
+        </form>
+    </div>
+</div>
+</body>
+</html>
